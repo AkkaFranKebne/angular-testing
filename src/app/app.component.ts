@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
     username = '';
     usernameGiven  = false;
+    detailesShown = false;
+    //numberOfVisistsInDetailes = 0;
+    visitsInDetailes = [];
         
     onUpdateUsername(event: Event){
             if (this.username.length > 0) {
@@ -21,6 +24,22 @@ export class AppComponent {
     onAddingUsername(event: Event) {
         this.username = (<HTMLInputElement>event.target).value; 
     }
+    
+    onToggleDetailes(event: Event) {
+        if (this.detailesShown == false) {
+            this.detailesShown = true;
+            //this.numberOfVisistsInDetailes +=1;
+            this.visitsInDetailes.push(Date());
+            //console.log(this.numberOfVisistsInDetailes);
+            //console.log(this.visitsInDetailes);
+        }
+        else {
+            this.detailesShown = false;
+        }
+            
+    }
+    
+
   
 }
 

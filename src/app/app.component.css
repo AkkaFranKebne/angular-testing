@@ -1,3 +1,11 @@
 h3 {
     color: darkcyan;
 }
+
+.hidden {
+    display: none;
+}
+
+.whiteColor {
+    color: white;
+}

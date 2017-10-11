@@ -14,6 +14,22 @@
                     [disabled]="!usernameGiven" 
                     (click)='onAddingUsername($event)'
                     >Login</button>
+            <button 
+                    class="btn btn-info"
+                    (click)='onToggleDetailes($event)'
+                    >Show detailes</button>
+            <p
+               [ngClass]="{hidden: detailesShown == false}"
+               >Login with "guest" if you do not have an account</p>
+            <h5>The detailes where visited {{  visitsInDetailes.length }} times: </h5>
+            <ul>
+                <li 
+                    *ngFor="let visit of visitsInDetailes; let i = index"
+                    [ngClass]="{whiteColor: i >= 4}"
+                    [ngStyle]= "{backgroundColor: i >= 4 ? 'lightblue' : 'white'}"
+                    >{{ visit }}</li>
+            </ul>
+            {{  visitsInDetailes }}
             <!--{{usernameGiven}}-->
             <hr>
             <app-servers></app-servers>            
