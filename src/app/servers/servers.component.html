@@ -17,10 +17,10 @@
         (click)='onCreateServer()'
         >Add server</button>
 <p>{{ serverCreationStatus  }}</p>
+<p *ngIf="serverCreated; else noProcess"> Now you can observe the process.</p>
+<ng-template #noProcess><p>No new processes to observe</p></ng-template>
 <!--<p>{{ serverName }}</p>
 <p>{{ serverSize }}</p>-->
 <div class='container'>
-    <app-server></app-server>
-    <app-server></app-server>
-    <app-server></app-server>
+    <app-server *ngFor="let server of servers"></app-server>
 </div>
