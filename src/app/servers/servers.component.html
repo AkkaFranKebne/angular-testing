@@ -4,6 +4,12 @@
        class='form-control'
        (input)='onUpdateServerName($event)'
        >
+<label>Server size: </label>
+<input
+       type= "text"
+       class='form-control'
+       [(ngModel)]="serverSize"
+       >
 
 <button 
         class='btn btn-primary' 
@@ -11,6 +17,8 @@
         (click)='onCreateServer()'
         >Add server</button>
 <p>{{ serverCreationStatus  }}</p>
+<!--<p>{{ serverName }}</p>
+<p>{{ serverSize }}</p>-->
 <div class='container'>
     <app-server></app-server>
     <app-server></app-server>
